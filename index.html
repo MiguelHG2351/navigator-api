@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>De que se trata Navigator API</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header class="header-site">
+        <h1>API Navigator</h1>
+    </header>
+
+    <section class="container">
+        <header>
+            <h2>Introducción a la API Navigator</h2>
+        </header>
+
+        <div class="web-share">
+            <img src="https://dkofva0t6jnyn.cloudfront.net/sites/default/files/styles/amp_blog_image_large/public/consumer/blog/csm-blog/parentsultimateguide-minecraft-blog.jpg" alt="XD" />
+            <button id="btn-search">Presione la foto para compartir</button>            
+        </div>
+
+    </section>
+
+    <script>
+
+        const $btn = document.getElementById('btn-search')
+
+        console.log(Navigator)
+        const shareData = {
+            title: 'Maincra',
+            text: 'Un video Juego v:v v:',
+            url: 'https://miguel2351.vercel.app'
+        }
+
+        $btn.addEventListener('click', async () => {
+            if ('share' in navigator ) {
+                await navigator.share(shareData)
+            } else if(navigator.platform === 'Win32' ) {
+                console.log('Usted esta en el ordenador')
+            } else {
+                console.log('Usted no tiene disponible esta funcionalidad')
+            }
+            
+        })
+
+    </script>
+
+</body>
+</html>
