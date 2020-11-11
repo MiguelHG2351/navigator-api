@@ -49,6 +49,7 @@
             const response = await request.blob()
             const file = new File([response], 'file_images.jpg', { type: 'image/jpeg',  })
             const fileArray = [file]
+            navigator.canShare({ file: fileArray })
             await navigator.share({...shareData, file: fileArray})
         }
 
