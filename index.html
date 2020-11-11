@@ -14,13 +14,18 @@
     </header>
 
     <section class="container">
+        <h3>Propiedades experimentales JavaScript</h3>
+        <br>
+        <br>
+        <br>
+        <br>
         <header>
             <h2>Introducción a la API Navigator</h2>
         </header>
-
         <div class="web-share">
             <img src="https://dkofva0t6jnyn.cloudfront.net/sites/default/files/styles/amp_blog_image_large/public/consumer/blog/csm-blog/parentsultimateguide-minecraft-blog.jpg" alt="XD" />
-            <button id="btn-search">Presione la foto para compartir</button>            
+            <button id="btn-search">Presione para compartir</button>            
+            <button id="btn-search2">Presione para compartir el archivo</button>            
         </div>
 
     </section>
@@ -28,13 +33,28 @@
     <script>
 
         const $btn = document.getElementById('btn-search')
+        const $btn2 = document.getElementById('btn-search2')
 
         console.log(Navigator)
+
         const shareData = {
             title: 'Maincra',
             text: 'Un video Juego v:v v:',
             url: 'https://miguel2351.vercel.app'
         }
+
+
+        async function shareFile() {
+            const request = await fetch('https://miguelhg2351.github.io/navigator-api/images/escuela.jpg')
+            const response = await request.blob()
+            const file = new File([response], 'file_images.jpg', { type: 'image/jpeg',  })
+            const fileArray = [file]
+            await navigator.share({...shareData, file: fileArray})
+        }
+
+        // Primer Método, con Async Await
+
+        // Web share esta disponible desde chrome 76
 
         $btn.addEventListener('click', async () => {
             if ('share' in navigator ) {
@@ -46,6 +66,8 @@
             }
             
         })
+
+        $btn2.addEventListener('click', shareFile)
 
     </script>
 
