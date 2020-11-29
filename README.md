@@ -15,3 +15,11 @@ El diseño se actualizara la proxima semana :D
 **masking-agent** Es extensión de privacidad del navegador que cambia la plataforma por defecto a eso.
 
 ![Values](/images/platform3.png)
+
+- onLine
+
+Sintaxis: navigator.onLine
+
+devuelve un valor tipo Bool
+
+> true | false
