@@ -8,10 +8,10 @@ El diseño se actualizara la proxima semana :D
 
 # Platform de Navigator tiene múltiples valores
 
-[Values](/images/platform1.png)
-[Values](/images/platform2.png)
+![Values](/images/platform1.png)
+![Values](/images/platform2.png)
 
 
 **masking-agent** Es extensión de privacidad del navegador que cambia la plataforma por defecto a eso.
 
-[Values](/images/platform3.png)
+![Values](/images/platform3.png)
