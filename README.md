@@ -46,4 +46,6 @@ if (connection.saveData || ['slow-2g', '2g', '3g'].includes(connection.effective
 
 # navigator.mediaSession
 
-manipulación del reproductor de chrome
+manipulación del reproductor del Navegador
+
+**Proximamente :D**
