@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigator Media Session</title>
+</head>
+<body>
+    <video id="video" src="canvas.mp4" width="1280px" height="720px" controls autoplay></video>
+    <script>
+        const video = document.getElementById('video')
+        if('mediaSession' in navigator) {
+            let metaData = {
+                title: 'MiguelHG351',
+                artist: 'platzi',
+                album: 'Curso de Programación Básica',
+                artwork: [
+                    { src: 'https://i.imgur.com/IkIDdmW.png',   sizes: '96x96',   type: 'image/png' },
+                    { src: 'https://i.imgur.com/iNoM0s2.png', sizes: '128x128', type: 'image/png' },
+                    { src: 'https://i.imgur.com/bZUUNvy.png', sizes: '192x192', type: 'image/png' },
+                    { src: 'https://i.imgur.com/ga3aZM2.png', sizes: '256x256', type: 'image/png' },
+                    { src: 'https://i.imgur.com/KpGPbgC.png', sizes: '384x384', type: 'image/png' },
+                    { src: 'https://i.imgur.com/AjODJCe.png', sizes: '512x512', type: 'image/png' },
+                ]
+            }
+            // navigator.mediaSession.playbackState = "playing";
+            console.log('El recurso esta disponible')
+            navigator.mediaSession.metadata = new MediaMetadata(metaData)
+
+        }
+
+        navigator.mediaSession.setActionHandler('play', () => video.play())
+        navigator.mediaSession.setActionHandler('pause', () => video.pause())
+        navigator.mediaSession.setActionHandler('seekbackward', (details) => {
+        video.currentTime = video.currentTime - (details.seekOffset || 10);
+        });
+        navigator.mediaSession.setActionHandler('seekforward', (details) => {
+            video.currentTime = video.currentTime + (details.seekOffset || 10)
+        })
+        // navigator.mediaSession.setActionHandler('play', video.play())
+        // navigator.mediaSession.setActionHandler('play', video.play())
+        // navigator.mediaSession.setActionHandler('play', video.play())
+        // navigator.mediaSession.setActionHandler('play', video.play())
+        // navigator.mediaSession.setActionHandler('play', video.play())
+    </script>
+</body>
+</html>

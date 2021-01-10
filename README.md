@@ -43,3 +43,7 @@ if (connection.saveData || ['slow-2g', '2g', '3g'].includes(connection.effective
   // prevent loading resources and other data saving measures
 }
 ```
+
+# navigator.mediaSession
+
+manipulación del reproductor de chrome
